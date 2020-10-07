@@ -1,31 +1,23 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build",
-            "type": "shell",
-            "options": {
-                "shell": {
-                    "executable": "C:\\Windows\\System32\\wsl.exe",
-                }
-            },
-            "command": "g++",
-            "args": [
-                "-std=gnu++1y",
-                "-g",
-                "-O0",
-                "-I/opt/boost/gcc/include",
-                "-L/opt/boost/gcc/lib",
-                "-o",
-                "`wslpath",
-                "'${workspaceFolder}\\problem.exe'`",
-                "`wslpath",
-                "'${file}'`",
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: g++-7 build active file",
+			"command": "/usr/bin/g++-7",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/problem.out"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
 }
